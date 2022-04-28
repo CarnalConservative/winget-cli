@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Check-Out Form</title>
+    <style>
+
+        input:invalid {
+        border: 2px dashed red;
+      }
+      input:invalid:required {
+  background-image: linear-gradient(to right, rgba(255, 0, 43, 0.336),rgba(255, 0, 43, 0.336));
+}
+      input:valid {
+        border: 2px solid black;
+      }
+
+    </style>
+
+</head>
+<body>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <label for="first_name">First Name: </label>
+        <input id="first_name" name="first_name" ><br>
+        <label for="last_name">Last Name: </label>
+        <input id="last_name" name="last_name" ><br>
+        <label for="address">Address: </label>
+        <input id="address" name="address" ><br>
+        <label for="phone">Phone: </label>
+        <input id="phone" name="phone" required pattern="[123456789][123456789][123456789]-[123456789][123456789][123456789]-[123456789][123456789][123456789][123456789]">
+        <a style="font-size:xx-small";>Please enter using "XXX-XXX-XXXX" format</a><br>
+        <div id="items">
+            <input type="checkbox" id="item_0" name="items" onclick="" value="2.00">
+            <label for="item_0">Buckler: $2.00</label><br>
+            <input type="checkbox" id="item_1" name="items" onclick="" value="5.00">
+            <label for="item_1">Bracers: $5.00</label><br>
+            <input type="checkbox" id="item_2" name="items" onclick="" value="10.00">
+            <label for="item_2">Shield: $10.00</label><br>
+            <input type="checkbox" id="item_3" name="items" onclick="" value="20.00">
+            <label for="item_3">Breastplate: $20.00</label><br><?php echo $_POST["items"]; ?>
+        </div>
+        <a>Your current Total is: $ <span id="addPrices()"></span><br>
+        <input type="radio" id="visa" name="card" value="visa">
+        <label for="visa">VISA</label><br>
+        <input type="radio" id="MC" name="card" value="MC">
+        <label for="MC">Mastercard</label><br>
+        <input type="radio" id="AmEx" name="card" value="AmEx">
+        <label for="AmEx">American Express</label>
+        <label for="credit_card">Credit Card #: </label>
+        <input id="credit_card" name="credit_card" required pattern="[123456789][123456789][123456789][123456789] [123456789][123456789][123456789][123456789] [123456789][123456789][123456789][123456789] [123456789][123456789][123456789][123456789]">
+        <a style="font-size:xx-small";>Please enter using "XXXX XXXX XXXX XXXX" format</a><br>
+        <label for="exp_date">Credit Card Expiration Date: </label>
+        <input id="exp_date" name="exp_date" required pattern="[123456789][123456789]/20[123456789][123456789]">
+        <a style="font-size:xx-small";>Please enter using "mm/yyyy" format</a><br>
+
+        <input type="reset" onclick="Reset()" value="Reset"> <button>Submit</button>
+      </form>
+</body>
+<script src="assign11_a.php">
+
+</script>
+</html>

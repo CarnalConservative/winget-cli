@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<Head>
+<meta charset="utf-8">
+<title>powers</title>
+<script>
+function run(){
+let result = 1;
+ for (let i = 1;  i <= 31;  i++){
+ let base = 2;
+ let pow =", \n" + 2**i;
+ result+= pow;
+}
+
+document.getElementById("output").innerHTML = result;
+
+}    
+</script>
+</head>
+
+<body>
+
+ <button type="button" onclick="run()">Powers</button>
+ <div id="output"></div>
+</body>
+</html>

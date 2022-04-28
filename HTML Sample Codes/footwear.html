@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Proper Footwear</title>
+<script>
+
+function Proper_Footwear() {
+    let weather = document.getElementById("weather").value;
+
+    if (weather != "hot"||"rain"||"snow");{
+        footwear = "shoes"
+    }
+    if (weather == "hot"){
+        footwear = "sandals"
+    }
+    if (weather == "rain"){
+        footwear = "golashes"
+    }
+    if (weather == "snow"){
+        footwear = "boots"
+    }
+    
+
+document.getElementById("output").innerHTML = footwear;
+}  
+
+    </script>
+</head>
+
+<body>
+Weather: <input type="text" id="weather" size="3"><br>  
+
+<button type="button" onclick="Proper_Footwear()">Proper Footwear</button>
+
+<div id="output"></div>  
+</body>
+</html>

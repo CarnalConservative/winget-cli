@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Sum Odds</title>
+    <meta charset="utf-8">
+    <script>
+
+/*Defining Table:
+ Input: an integer number
+ Processing: calculating sum of all the odd integers between 1 and n, inclusive
+ Output: sum of all the odd integers between 1 and n, inclusive
+ */
+
+        function sumNumbers() {
+            let number = parseInt(prompt('Enter an integer number'));
+            let result = 0;
+
+            if (number < .9) {
+                alert('Please, enter a integer number (more then 0)');
+            } else {
+                for (let i = 1; i <= number; i += 2) {
+                    result += i;
+                }
+            }
+
+            document.getElementById('output').innerHTML = result;
+        }
+
+    </script>
+
+</head>
+<body>
+    <button type="button" onclick="sumNumbers()">Sum Odds!</button>
+    <div id="output"></div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Are You Worthy?</title>
+<script>
+    function african_Swallow() {
+        cry = "Help! Help! I'm being oppressed!"
+        document.getElementById("output1").innerHTML = cry;
+    }
+    function european_Swallow() {
+        vote = "A KING!? Well I didn't vote for you."
+        document.getElementById("output2").innerHTML = vote;
+    }
+</script>
+
+
+</head>
+<body>
+<h1>Are You Worthy?</h1>
+<p>
+What is your name?:
+<input type="text" id="txtname" size="10">
+</p>
+
+<p>
+What is your Favorite Color?:
+<input type="text" id="txtColor" size="10">
+</p>
+
+<p>
+What is Your Quest?:<br>
+<textarea id="txQuest" rows="8" cols="40">
+</textarea>
+</p>
+
+<p>
+<button type="button" onclick="african_Swallow()">African Swallow</button>
+<div id="output1"></div>
+<button type="button" onclick="european_Swallow()">European Swallow</button>
+<div id="output2"></div>
+</p>
+</body>
+</html>

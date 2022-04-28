@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Register Piano Student</title>
+
+<script type="text/javascript">
+    function showDiv(select){
+       if(select.value=="duet"){
+        document.getElementById("hidden").style.display = "block";
+       } else{
+        document.getElementById("hidden").style.display = "none";
+       }
+    } 
+    </script>
+</head>
+<style>
+</style>
+<body>
+Piano Registration Form!
+<form action="assign13.php" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+    <!--Input Fields
+    Performance Type: (solo, duet, concerto). Note: the duet performance type requires the listing of two students. Give this input the name performance. -->
+    Please select the type of performance you will demonstrate:<br>
+    <select name="performance" ; onchange="showDiv(this)" required>
+        <option value="">-select-</option>
+        <option value="solo">Solo</option>
+        <option value="duet">Duet</option>
+        <option value="concerto">Concerto</option>
+    </select><br>
+    Please Enter Your Student Information:<br>
+    <!--First Name. Give this input the name first_name. -->
+    <label for="first_name">First Name: </label>
+    <input id="first_name" name="first_name" required ><br>
+    <!--Last Name. Give this input the name last_name.-->
+    <label for="last_name">Last Name: </label>
+    <input id="last_name" name="last_name" required><br>
+    <!--Student ID. Give this input the name student_id.-->
+    <label for="student_id">Student ID: </label>
+    <input id="student_id" name="student_id" required><br>
+    <!--These following three fields should only be visible if the performance type is Duet.
+    First Name - of 2nd Student in duet. Give this input the name first_name_2.
+    Last Name - of 2nd Student in duet. Give this input the name last_name_2.
+    Student ID - of 2nd Student in duet. Give this input the name student_id_2.-->
+    <div id="hidden" style="display:none;">
+    Please Enter The Information of the Second Student:<br>
+    <label for="first_name_2">First Name: </label>
+    <input id="first_name_2" name="first_name_2" ><br>
+    <!--Last Name. Give this input the name last_name.-->
+    <label for="last_name_2">Last Name: </label>
+    <input id="last_name_2" name="last_name_2" ><br>
+    <!--Student ID. Give this input the name student_id.-->
+    <label for="student_id_2">Student ID: </label>
+    <input id="student_id_2" name="student_id_2" ><br>
+    </div><br>
+    Please Indicate Your Level of Skill:<br>
+    <!--Skill Level (valid skill levels: beginner, intermediate, pre-advanced, advanced). Give this input the name skill. -->
+    <input type="radio" id="beginner" name="skill" value="beginner" required>
+        <label for="beginner">Beginner</label><br>
+        <input type="radio" id="intermediate" name="skill" value="intermediate">
+        <label for="intermediate">Intermediate</label><br>
+        <input type="radio" id="pre-advanced" name="skill" value="pre-advanced">
+        <label for="pre-advanced">Pre-Advanced</label><br>
+        <input type="radio" id="advanced" name="skill" value="advanced">
+        <label for="advanced">Advanced</label><br>
+    Please Indicate What Type of Instruments Will Be Used in The Performance:<br>
+    <!--Instrument (valid instruments: piano, voice, string, organ, other). Give this input the name instrument. -->
+    <input type="checkbox" id="instrument_0" name="instrument_0" onclick="" value="instrument_0" required>
+        <label for="instrument_0">Vocals</label><br>
+        <input type="checkbox" id="instrument_1" name="instrument_1" onclick="" value="instrument_1">
+        <label for="instrument_1">String</label><br>
+        <input type="checkbox" id="instrument_2" name="instrument_2" onclick="" value="instrument_2">
+        <label for="instrument_2">Brass</label><br>
+        <input type="checkbox" id="instrument_3" name="instrument_3" onclick="" value="instrument_3">
+        <label for="instrument_3">Precusion</label><br>
+    Please Indicate Which Building You Will Be Performing at:<br>
+    <!--Location // On campus building where the room is located (Snow, Austin, etc.). Give this input the name location. -->
+    <select name="location" required>
+        <option value="">-select-</option>>
+        <option value="sno">Eliza R. Snow Performing Arts Center</option>
+        <option value="hin">Gordon B. Hinckley Bldg</option>
+        <option value="mc">Hyrum Manwaring Student Center</option>
+        <option value="rig">Rigby Hall</option>
+        <option value="shc">Student Health & Counseling Center</option>
+        </select><br>
+    Please Indicate Which Room You Will Be Playing In:<br>
+    <!--Room# // room number the student will be judged in. Give this input the name room. -->
+    <select name="room" required>
+        <option value="">-select-</option>
+        <option value="101">101</option>
+        <option value="102">102</option>
+        <option value="103">103</option>
+        <option value="104">104</option>
+        <option value="105">105</option>
+        </select><br>
+    Please Indicate What Time You Are Performing:<br>
+    <!--Time Slot // time slot the student is registering for. (i.e. 8:00 am, 9:45am). Give this input the name time_slot. -->
+    <select name="time_slot" required>
+        <option value="">-select-</option>
+        <option value="8:00am">8:00am</option>
+        <option value="9:00am">9:00am</option>
+        <option value="10:00am">10:00am</option>
+        <option value="11:00am">11:00am</option>
+        <option value="12:00pm">12:00pm</option>
+        </select><br>
+    <!--Two Buttons: Register student. Give this input the name register. Clear form. Give this input the name clear. -->
+    <input type="reset" value="Clear"><input type="submit" value="Register">
+</form>
+<div>
+Registered Performers!
+<?php
+$performers = file_get_contents('Data.txt');
+echo $performers;
+?>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Skills
+    //* Defining Table:
+    *Input: numbers and operators
+    *Processing: calculate
+    *output: result
+    *//
+    </title>
+    <script language="JavaScript" type="text/javascript">
+
+       function calculation() {
+
+            let a = parseFloat(document.getElementById("ainput").value)
+            let b = document.getElementById("binput").value
+            let c = parseFloat(document.getElementById("cinput").value)
+            let result
+            if (b == "+") {
+                result = a + c
+            } else if (b == "-") {
+                result = a - c
+            } else if (b == "*") {
+                result = a * c
+            } else if (b == "/") {
+                result = a / c
+            }
+            else {
+                result = "Insert a valid operator (+, -, * or /)"
+            }
+
+            let resultInput = parseFloat(document.getElementById("resultInput").value)
+            let feedback = resultInput == result
+                if (feedback) {
+                document.getElementById("output").innerHTML = "Correct! Good Job!"
+                }
+                else {
+                    if (result == "Insert a valid operator (+, -, * or /)") {
+                        document.getElementById("output").innerHTML = "Insert a valid operator (+, -, * or /)"
+                    }
+                    else {
+                        document.getElementById("output").innerHTML = "Incorrect! Try again!"
+                    }
+                }
+
+
+        }
+
+    </script>
+
+</head>
+<body>
+<h4>Test Your Math Skills!</h4>
+<p> <input type="number" id="ainput" size="10"> <input type="text" id="binput" size="5"> <input type="number" id="cinput" size="10"> = <input type="number" id="resultInput" size="10"> </p>
+
+<button type="button" onclick="calculation()">Check Answer!</button>
+
+<div id="output"><h3> <strong></strong> </h3></div>
+</body>
+</html>

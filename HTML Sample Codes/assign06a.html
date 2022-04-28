@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset=UTF-8>
+  <title>Miskatonic University:University</title>
+  <meta name="description" content="Miskatonic University School of Eldritch Learning and Arcane Arts">
+  <style>
+    .item1 {
+      grid-area: header;
+    }
+
+    .item2 {
+      grid-area: menu;
+    }
+
+    .item3 {
+      grid-area: main;
+    }
+
+    .item4 {
+      grid-area: right;
+    }
+
+    .item5 {
+      grid-area: footer;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        'header header header header header header'
+        'menu main main main right right'
+        'menu footer footer footer footer footer';
+      gap: 10px;
+      background-color: #00080f;
+      padding: 10px;
+    }
+
+    .grid-container>div {
+      background-color: rgba(192, 173, 4, 0.8);
+      text-align: center;
+      padding: 20px 0;
+      font-size: 30px;
+    }
+  </style>
+</head>
+
+<body style="background-image: url('backdrop.jpg');">
+
+  <h1 style="text-align: center; color: rgb(136, 123, 4);">Welcome to Miskatonic University!</h1>
+
+  <p style="text-align: center; color:rgb(136, 123, 4);">"Ex Insania Gloria"</p>
+
+  <div class="grid-container">
+    <div class="item1">
+      <a href="assign06a.html">
+        <img src="University.jpg" alt="University Icon" style="width:80px;height:80px;"></a>
+        <a href="assign06a.html">Miskatonic University</a><a href="assign06a.html"><img src="University.jpg" alt="University Icon" style="width:80px;height:80px;"></a><br>A
+      School of Eldritch Learning and Arcane Arts</div>
+    <div class="item2" style="text-align: left;">Menu<br><a href="assign06a.html"><img src="University.jpg"
+          alt="University Icon" style="width:30px;height:30px;"></a><a href=”assign06a.html”>Home</a><br>
+      <a href="assign06b.html"><img src="Academics.jpg" alt="Academics Icon" style="width:30px;height:30px;"></a><a
+        href=”assign06b.html”>Academics</a><br>
+      <a href="assign06c.html"><img src="Arts.jpg" alt="Arts Icon" style="width:30px;height:30px;"></a><a
+        href=”assign06c.html”>Arts</a><br>
+      <a href="assign06d.html"><img src="Athletics.jpg" alt="Athletics Icon" style="width:30px;height:30px;"></a><a
+        href=”assign06d.html”>Athletics</a>
+    </div>
+    <div class="item3"><a href="assign06b.html"><img src="Academics.jpg" alt="Academics Icon"
+          style="width:80px;height:80px;"></a><br><u><a href=”assign06b.html”>Academics</a></u><br>Seek the Lost and
+      Forbidden!</div>
+    <div class="item4"><a href="assign06c.html"><img src="Arts.jpg" alt="Arts Icon"
+          style="width:80px;height:80px;"></a><br><u><a href="assign06c.html">Arts</a></u><br>Learn to show the Unseen!
+    </div>
+    <div class="item5"><a href="assign06d.html"><img src="Athletics.jpg" alt="Athletics Icon"
+          style="width:80px;height:80px;"></a><br><u><a href="assign06d.html">Athletics</a></u><br>The Spirit is Useless
+      if The Flesh is Weak!</div>
+  </div>
+  <h2 style="text-align: center; color:rgb(236, 169, 169);">Here At Miskatonic we pride ourselves in creating
+    individuals who we know will forever change the world as you know it!</h2>
+</body>
+
+</html>

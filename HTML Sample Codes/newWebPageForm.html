@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Get Stuff!</title>
+
+<script type="text/javascript">
+    function showDiv(this){
+       if(select.value=="yes"){
+           document.getElementById("hidden0").style.display = "block";
+        } else{
+            document.getElementById("hiddenNo").style.display = "none";
+        }
+       if(select.value=="no"){
+           document.getElementById("hiddenNo").style.display = "block";   
+        } else{
+            document.getElementById("hidden0").style.display = "none";  
+       }
+    }
+    function showDiva0(this){
+       if(radio.value=="check"){
+        document.getElementById("hidden1").style.display = "block";
+        document.getElementById("hidden2").style.display = "none";
+        document.getElementById("hidden3").style.display = "none";
+       } else{
+        document.getElementById("hidden1").style.display = "none";
+       }
+       if(radio.value=="credit_card"){
+        document.getElementById("hidden2").style.display = "block";
+        document.getElementById("hidden1").style.display = "none";
+        document.getElementById("hidden3").style.display = "none";
+       } else{
+        document.getElementById("hidden2").style.display = "none";
+       }
+        if(radio.value=="crypto"){
+        document.getElementById("hidden3").style.display = "block";
+        document.getElementById("hidden1").style.display = "none";
+        document.getElementById("hidden2").style.display = "none";
+       } else{
+        document.getElementById("hidden3").style.display = "none"; 
+    }
+}
+    
+</script>
+</head>
+<style>
+</style>
+<body>
+Get Stuff! Gibs Monies!
+<form>
+    <!--Input Fields
+    Performance Type: (solo, duet, concerto). Note: the duet performance type requires the listing of two students. Give this input the name performance. -->
+    Would you like to know more?:<br>
+    <select name="" ; onchange="showDiv(this)"; required>
+        <option value="" >-select-</option>
+        <option value="yes" >Yes</option>
+        <option value="no" >No</option>        
+    </select><br>
+
+    <div id="hidden0" style="display:none;">
+    How Would You Like To Pay For This Knowledge?:<br>
+        <input type="radio" id="none" name="pay" value="" onchange="showDiva0(this)";>
+        <label for="check">None</label><br>
+        <input type="radio" id="credit_card" name="pay" value="check" onchange="showDiva0(this)";>
+        <label for="check">Check</label><br>
+        <input type="radio" id="credit_card" name="pay" value="credit_card" onchange="showDiva0(this)";>
+        <label for="credit_card">Credit Card</label><br>
+        <input type="radio" id="crypto" name="pay" value="crypto" onchange="showDiva0(this)";>
+        <label for="crypto">Crypto</label><br>
+    </div>
+    <div id="hidden1" style="display:none;" >
+    Please Enter Check Details:<br>
+        <label for="first_name">First Name: </label>
+        <input id="first_name" name="first_name" required ><br>
+        <!--Last Name. Give this input the name last_name.-->
+        <label for="last_name">Last Name: </label>
+        <input id="last_name" name="last_name" required><br>
+        <!--Student ID. Give this input the name student_id.-->
+        <label for="address">Address: </label>
+        <input id="address" name="address" required><br>
+    </div>
+    <div id="hidden2" style="display:none;">
+    Please Enter Credit Card Information:<br>
+    <!--Instrument (valid instruments: piano, voice, string, organ, other). Give this input the name instrument. -->
+    <label for="cc">Credit Card #: </label>
+        <input id="cc" name="cc" required pattern="[123456789][123456789][123456789][123456789] [123456789][123456789][123456789][123456789] [123456789][123456789][123456789][123456789] [123456789][123456789][123456789][123456789]">
+        <a style="font-size:xx-small";>Please enter using "XXXX XXXX XXXX XXXX" format</a><br>
+        <label for="exp_date">Credit Card Expiration Date: </label>
+        <input id="exp_date" name="exp_date" required pattern="[123456789][123456789]/20[123456789][123456789]">
+        <a style="font-size:xx-small";>Please enter using "mm/yyyy" format</a><br>
+    </div>
+    <div id="hidden3" style="display:none;" >
+    Please Enter Crypto Link:<br>
+    <!--Location // On campus building where the room is located (Snow, Austin, etc.). Give this input the name location. -->
+    <label for="crypto_link">Link: </label>
+        <input id="crypto_link" name="crypto_link" required ><br>
+    </div>
+    <div id="hiddenNo" style="display:none;">
+    Bye Loser!
+    </div>
+    <br>
+    
+    <input type="reset" value="Clear" onclick="showDiv(this)"><input type="submit" value="Register">
+</form>
+
+</body>
+</html>

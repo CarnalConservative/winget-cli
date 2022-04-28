@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head> <meta charset="utf-8">
+<title>Title</title>
+<script> 
+function doInputOutput() {
+    let tempF = parseFloat(document.getElementById("temperature").value);
+    let speed = parseFloat(document.getElementById("wind_speed").value);
+    let wind_speed = wind_Chill(tempF, speed);
+    document.getElementById('output').innerHTML = wind_speed;
+}
+
+function wind_Chill(tempF, speed) {
+    
+    let wind_speed = 35.74 + 0.6215 * tempF - 35.75 * speed ** 0.16 + 0.4275 * tempF * speed ** 0.16;
+    wind_speed = wind_speed.toFixed(2);
+    return wind_speed;
+}
+
+</script>
+</head>
+<body> Enter the Temperature in Fahrenheit:<input type="text" id="temperature" size="5">
+Wind Speed in MPH: <input type="text" id="wind_speed" size="5">
+<button type="button" onclick="doInputOutput()">Click</button>
+<div id="output"></div>
+</body>
+</html>

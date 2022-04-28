@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8"> 
+<title>SumOdds</title>
+<script>
+/*input: Enter integer "n"
+Processing: Find all odd numbers from 1 to n, add them together
+Output: Display all odd numbers and their sum*/
+
+function displayOdd() {
+    let i = 1;
+    let odds = "0";
+    let sum = 0;
+    let numba = parseInt(document.getElementById("pickanumba").value);
+    while (i <= numba) {
+        sum += i;
+    odds += ", " + i;
+        i += 2;
+        
+    }
+    document.getElementById('displayDiv').innerHTML = odds + "="
+    document.getElementById('displayDiv2').innerHTML = sum
+}
+
+
+</script>
+</head>
+<body>
+Pick A Numba', Any Numba'!: <input type="text" id="pickanumba">
+<button type="button" onclick="displayOdd()">Find Odd and Then Sum!</button>
+<div id="displayDiv"></div><div id="displayDiv2"></div>
+</body>
+</html>

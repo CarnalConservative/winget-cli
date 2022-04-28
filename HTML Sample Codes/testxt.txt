@@ -1,0 +1,12 @@
+This a test for python.
+Contents
+
+Introduction
+Steps to Count Number of Words in Text File
+Example 1: Count Number of Words
+Example 2: Count Number of Words in Text File with Multiple Lines
+Summary
+Python – Count Number of Words
+You can count number of words in a text file in Python by following a sequence of steps which we shall discuss in this tutorial.
+
+In this tutorial, we shall learn how to count number of words in text file, using Python example programs.

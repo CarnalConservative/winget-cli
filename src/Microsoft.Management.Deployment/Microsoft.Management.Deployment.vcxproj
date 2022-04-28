@@ -12,8 +12,10 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
-    <WindowsTargetPlatformVersion Condition=" '$(WindowsTargetPlatformVersion)' == '' ">10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformMinVersion>10.0.17763.0</WindowsTargetPlatformMinVersion>
+    <WindowsSDKDesktopARMSupport>true</WindowsSDKDesktopARMSupport>
+    <WindowsSDKDesktopARM64Support>true</WindowsSDKDesktopARM64Support>
     <CppWinRTParameters>-library Microsoft_Management_Deployment</CppWinRTParameters>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -148,13 +150,18 @@
     <ClInclude Include="PackageCatalogInfo.h" />
     <ClInclude Include="PackageCatalogReference.h" />
     <ClInclude Include="PackageManager.h" />
+    <ClInclude Include="PackageManagerSettings.h" />
     <ClInclude Include="PackageMatchFilter.h" />
     <ClInclude Include="PackageVersionId.h" />
     <ClInclude Include="PackageVersionInfo.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Public\ComClsids.h" />
+    <ClInclude Include="UninstallOptions.h" />
+    <ClInclude Include="UninstallResult.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CatalogPackage.cpp" />
+    <ClCompile Include="ComClsids.cpp" />
     <ClCompile Include="ConnectResult.cpp" />
     <ClCompile Include="Converters.cpp" />
     <ClCompile Include="CreateCompositePackageCatalogOptions.cpp" />
@@ -168,6 +175,7 @@
     <ClCompile Include="PackageCatalogInfo.cpp" />
     <ClCompile Include="PackageCatalogReference.cpp" />
     <ClCompile Include="PackageManager.cpp" />
+    <ClCompile Include="PackageManagerSettings.cpp" />
     <ClCompile Include="PackageMatchFilter.cpp" />
     <ClCompile Include="PackageVersionId.cpp" />
     <ClCompile Include="PackageVersionInfo.cpp" />
@@ -175,6 +183,8 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="UninstallOptions.cpp" />
+    <ClCompile Include="UninstallResult.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Microsoft_Management_Deployment.def" />

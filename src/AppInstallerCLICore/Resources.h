@@ -187,6 +187,7 @@ namespace AppInstaller::CLI::Resource
         WINGET_DEFINE_RESOURCE_STRINGID(NoExperimentalFeaturesMessage);
         WINGET_DEFINE_RESOURCE_STRINGID(NoInstalledPackageFound);
         WINGET_DEFINE_RESOURCE_STRINGID(NoPackageFound);
+        WINGET_DEFINE_RESOURCE_STRINGID(NoPackageSelectionArgumentProvided);
         WINGET_DEFINE_RESOURCE_STRINGID(NoPackagesFoundInImportFile);
         WINGET_DEFINE_RESOURCE_STRINGID(NoUninstallInfoFound);
         WINGET_DEFINE_RESOURCE_STRINGID(NoVTArgumentDescription);
@@ -206,11 +207,14 @@ namespace AppInstaller::CLI::Resource
         WINGET_DEFINE_RESOURCE_STRINGID(PoliciesPolicy);
         WINGET_DEFINE_RESOURCE_STRINGID(PoliciesState);
         WINGET_DEFINE_RESOURCE_STRINGID(PositionArgumentDescription);
+        WINGET_DEFINE_RESOURCE_STRINGID(PreserveArgumentDescription);
         WINGET_DEFINE_RESOURCE_STRINGID(PrivacyStatement);
         WINGET_DEFINE_RESOURCE_STRINGID(PromptOptionNo);
         WINGET_DEFINE_RESOURCE_STRINGID(PromptOptionYes);
+        WINGET_DEFINE_RESOURCE_STRINGID(PurgeArgumentDescription);
         WINGET_DEFINE_RESOURCE_STRINGID(QueryArgumentDescription);
         WINGET_DEFINE_RESOURCE_STRINGID(RainbowArgumentDescription);
+        WINGET_DEFINE_RESOURCE_STRINGID(RenameArgumentDescription);
         WINGET_DEFINE_RESOURCE_STRINGID(ReportIdentityFound);
         WINGET_DEFINE_RESOURCE_STRINGID(RequiredArgError);
         WINGET_DEFINE_RESOURCE_STRINGID(RetroArgumentDescription);
@@ -318,6 +322,7 @@ namespace AppInstaller::CLI::Resource
         WINGET_DEFINE_RESOURCE_STRINGID(SourceUpdateCommandLongDescription);
         WINGET_DEFINE_RESOURCE_STRINGID(SourceUpdateCommandShortDescription);
         WINGET_DEFINE_RESOURCE_STRINGID(SourceUpdateOne);
+        WINGET_DEFINE_RESOURCE_STRINGID(SystemArchitecture);
         WINGET_DEFINE_RESOURCE_STRINGID(TagArgumentDescription);
         WINGET_DEFINE_RESOURCE_STRINGID(ThankYou);
         WINGET_DEFINE_RESOURCE_STRINGID(ThirdPartSoftwareNotices);
@@ -357,6 +362,7 @@ namespace AppInstaller::CLI::Resource
         WINGET_DEFINE_RESOURCE_STRINGID(VerifyPathFailedNotExist);
         WINGET_DEFINE_RESOURCE_STRINGID(VersionArgumentDescription);
         WINGET_DEFINE_RESOURCE_STRINGID(VersionsArgumentDescription);
+        WINGET_DEFINE_RESOURCE_STRINGID(WaitArgumentDescription);
         WINGET_DEFINE_RESOURCE_STRINGID(WindowsFeaturesDependencies);
         WINGET_DEFINE_RESOURCE_STRINGID(WindowsLibrariesDependencies);
         WINGET_DEFINE_RESOURCE_STRINGID(WindowsStoreTerms);

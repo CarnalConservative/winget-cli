@@ -158,6 +158,10 @@ namespace AppInstaller::Manifest
         {
             result = InstallerTypeEnum::MSStore;
         }
+        else if (inStrLower == "portable") 
+        {
+            result = InstallerTypeEnum::Portable;
+        }
 
         return result;
     }
@@ -245,6 +249,22 @@ namespace AppInstaller::Manifest
         else if (Utility::CaseInsensitiveEquals(in, "elevatesSelf"))
         {
             result = ElevationRequirementEnum::ElevatesSelf;
+        }
+
+        return result;
+    }
+
+    UnsupportedArgumentEnum ConvertToUnsupportedArgumentEnum(const std::string& in)
+    {
+        UnsupportedArgumentEnum result = UnsupportedArgumentEnum::Unknown;
+
+        if (Utility::CaseInsensitiveEquals(in, "log"))
+        {
+            result = UnsupportedArgumentEnum::Log;
+        }
+        else if (Utility::CaseInsensitiveEquals(in, "location"))
+        {
+            result = UnsupportedArgumentEnum::Location;
         }
 
         return result;
@@ -347,6 +367,10 @@ namespace AppInstaller::Manifest
         {
             result = ExpectedReturnCodeEnum::BlockedByPolicy;
         }
+        else if (inStrLower == "custom")
+        {
+            result = ExpectedReturnCodeEnum::Custom;
+        }
 
         return result;
     }
@@ -373,6 +397,8 @@ namespace AppInstaller::Manifest
             return "burn"sv;
         case InstallerTypeEnum::MSStore:
             return "msstore"sv;
+        case InstallerTypeEnum::Portable:
+            return "portable"sv;
         }
 
         return "unknown"sv;

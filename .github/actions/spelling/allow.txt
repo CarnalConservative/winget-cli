@@ -48,12 +48,14 @@ bugfix
 BUILDNUMBER
 bytearray
 cdecl
+cdn
 cer
 certutil
 cguid
 chrono
 cin
 cla
+CLASSNOTAVAILABLE
 CLSCTX
 cmake
 cmdlet
@@ -88,6 +90,7 @@ createtables
 cref
 csproj
 CStr
+csv
 CURSORPOSITON
 CUSTOMHEADER
 cwctype
@@ -187,7 +190,9 @@ hfile
 HGLOBAL
 HIDECANCEL
 hinternet
+HKCU
 HKEY
+HKLM
 hmac
 HMODULE
 Homepage
@@ -355,6 +360,7 @@ OSVERSIONINFOEXW
 outfile
 OUTOFDISKSPACE
 OUTOFMEMORY
+OUTOFPROC
 OWC
 packagefamilyname
 packageidentifier
@@ -381,7 +387,7 @@ png
 posix
 powershell
 pplx
-PPV
+ppv
 pragma
 PRECONFIG
 preindexed
@@ -390,6 +396,7 @@ PRIMARYKEY
 prioritization
 PRODUCTNAME
 PRODUCTVERSION
+PROGRAMFILES
 PROGRESSONLY
 promptrestart
 PROPERTYDUMP
@@ -444,6 +451,7 @@ screenshots
 SCROLLER
 SCROLLVIEWER
 sdk
+sdks
 seekg
 seinfo
 selectany
@@ -486,6 +494,7 @@ sscanf
 sstream
 STATFLAG
 STATSTG
+STDAPI
 stdcall
 stderr
 stdexcept
@@ -517,6 +526,8 @@ subselect
 substr
 SWIPECONTROL
 SYMED
+symlink
+symlinks
 Sys
 sz
 TARG
@@ -537,6 +548,7 @@ TEXTFORMAT
 TEXTINCLUDE
 Threadpool
 Timeline
+tls
 todo
 tokenizer
 tolower
@@ -622,6 +634,7 @@ WINAPI
 WINEVENT
 winget
 wininet
+winmd
 winmeta
 winres
 winrt

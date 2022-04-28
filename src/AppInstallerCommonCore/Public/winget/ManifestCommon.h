@@ -25,6 +25,9 @@ namespace AppInstaller::Manifest
     // V1.1 manifest version
     constexpr std::string_view s_ManifestVersionV1_1 = "1.1.0"sv;
 
+    // V1.2 manifest version
+    constexpr std::string_view s_ManifestVersionV1_2 = "1.2.0"sv;
+
     // The manifest extension for the MS Store
     constexpr std::string_view s_MSStoreExtension = "msstore"sv;
 
@@ -72,6 +75,7 @@ bool HasExtension(std::string_view extension) const;
         Exe,
         Burn,
         MSStore,
+        Portable,
     };
 
     enum class UpdateBehaviorEnum
@@ -126,12 +130,7 @@ bool HasExtension(std::string_view extension) const;
         AlreadyInstalled,
         Downgrade,
         BlockedByPolicy,
-    };
-
-    struct ExpectedReturnCode
-    {
-        DWORD InstallerReturnCode;
-        ExpectedReturnCodeEnum ReturnResponse;
+        Custom,
     };
 
     enum class PlatformEnum
@@ -147,6 +146,13 @@ bool HasExtension(std::string_view extension) const;
         ElevationRequired,
         ElevationProhibited,
         ElevatesSelf,
+    };
+
+    enum class UnsupportedArgumentEnum
+    {
+        Unknown,
+        Log,
+        Location
     };
 
     enum class ManifestTypeEnum
@@ -166,6 +172,13 @@ bool HasExtension(std::string_view extension) const;
         WindowsLibrary,
         Package,
         External
+    };
+
+    struct ExpectedReturnCode
+    {
+        DWORD InstallerReturnCode = 0;
+        ExpectedReturnCodeEnum ReturnResponse = ExpectedReturnCodeEnum::Unknown;
+        string_t ReturnResponseUrl;
     };
 
     struct Dependency
@@ -241,6 +254,8 @@ bool HasExtension(std::string_view extension) const;
     PlatformEnum ConvertToPlatformEnum(const std::string& in);
 
     ElevationRequirementEnum ConvertToElevationRequirementEnum(const std::string& in);
+
+    UnsupportedArgumentEnum ConvertToUnsupportedArgumentEnum(const std::string& in);
 
     ManifestTypeEnum ConvertToManifestTypeEnum(const std::string& in);
 

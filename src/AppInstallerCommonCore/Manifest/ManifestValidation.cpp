@@ -97,7 +97,8 @@ namespace AppInstaller::Manifest
             }
 
             // Validate system reference strings if they are set at the installer level
-            if (!installer.PackageFamilyName.empty() && !DoesInstallerTypeUsePackageFamilyName(installer.InstallerType))
+            // Allow PackageFamilyName to be declared with non msix installers to support nested installer scenarios after manifest version 1.1
+            if (manifest.ManifestVersion <= ManifestVer{ s_ManifestVersionV1_1 } && !installer.PackageFamilyName.empty() && !DoesInstallerTypeUsePackageFamilyName(installer.InstallerType))
             {
                 resultErrors.emplace_back(ManifestError::InstallerTypeDoesNotSupportPackageFamilyName, "InstallerType", InstallerTypeToString(installer.InstallerType));
             }
@@ -150,6 +151,22 @@ namespace AppInstaller::Manifest
                  installer.Switches.find(InstallerSwitchType::Silent) == installer.Switches.end()))
             {
                 resultErrors.emplace_back(ManifestError::ExeInstallerMissingSilentSwitches, ValidationError::Level::Warning);
+            }
+
+            if (installer.InstallerType == InstallerTypeEnum::Portable)
+            {
+                if (installer.AppsAndFeaturesEntries.size() > 1)
+                {
+                    resultErrors.emplace_back(ManifestError::ExceededAppsAndFeaturesEntryLimit);
+                }
+                if (installer.Commands.size() > 1)
+                {
+                    resultErrors.emplace_back(ManifestError::ExceededCommandsLimit);
+                }
+                if (installer.Scope != ScopeEnum::Unknown)
+                {
+                    resultErrors.emplace_back(ManifestError::ScopeNotSupported, ValidationError::Level::Warning);
+                }
             }
 
             // Check empty string before calling IsValidUrl to avoid duplicate error reporting.

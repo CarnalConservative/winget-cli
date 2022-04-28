@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 #include "pch.h"
 #include "Argument.h"
+#include "Command.h"
 #include "Resources.h"
 #include <winget/UserSettings.h>
 
@@ -86,6 +87,14 @@ namespace AppInstaller::CLI
             return Argument{ "accept-source-agreements", NoAlias, Args::Type::AcceptSourceAgreements, Resource::String::AcceptSourceAgreementsArgumentDescription, ArgumentType::Flag };
         case Args::Type::ExperimentalArg:
             return Argument{ "arg", NoAlias, Args::Type::ExperimentalArg, Resource::String::ExperimentalArgumentDescription, ArgumentType::Flag, ExperimentalFeature::Feature::ExperimentalArg };
+        case Args::Type::Rename:
+            return Argument{ "rename", NoAlias, Args::Type::Rename, Resource::String::RenameArgumentDescription, ArgumentType::Positional, false };
+        case Args::Type::Purge:
+            return Argument{ "purge", NoAlias, Args::Type::Purge, Resource::String::PurgeArgumentDescription, ArgumentType::Flag, false };
+        case Args::Type::Preserve:
+            return Argument{ "preserve", NoAlias, Args::Type::Preserve, Resource::String::PreserveArgumentDescription, ArgumentType::Flag, false };
+        case Args::Type::Wait:
+            return Argument{ "wait", NoAlias, Args::Type::Wait, Resource::String::WaitArgumentDescription, ArgumentType::Flag, false };
         default:
             THROW_HR(E_UNEXPECTED);
         }
@@ -98,6 +107,19 @@ namespace AppInstaller::CLI
         args.push_back(ForType(Args::Type::RainbowStyle));
         args.push_back(ForType(Args::Type::RetroStyle));
         args.push_back(ForType(Args::Type::VerboseLogs));
+    }
+
+    void Argument::ValidatePackageSelectionArgumentSupplied(const Execution::Args& args)
+    {
+        for (Args::Type type : { Args::Type::Query, Args::Type::Manifest, Args::Type::Id, Args::Type::Name, Args::Type::Moniker, Args::Type::Tag, Args::Type::Command })
+        {
+            if (args.Contains(type))
+            {
+                return;
+            }
+        }
+
+        throw CommandException(Resource::String::NoPackageSelectionArgumentProvided);
     }
 
     Argument::Visibility Argument::GetVisibility() const

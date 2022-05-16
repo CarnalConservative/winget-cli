@@ -1,0 +1,47 @@
+body, h1, main, .header, .quote1, .ol, .quote1, .quote2 {
+    width: 800px;
+    margin: 0 auto;
+    background-color: rgb(254, 177, 213);
+    
+
+}
+img {
+    width: 800px;
+    margin: 0 auto;
+    max-width: 360px;
+    max-height: 720px;
+}
+
+.header:hover {
+    color: black;
+}
+
+main .header {
+    background-color: rgb(254, 177, 213);
+    font-style: oblique;
+    color: white;
+    text-align: center;
+}
+
+main .quote1 {
+    background-color: rgb(254, 177, 213);
+    font-style: oblique;
+    color: white;
+    text-align: center;
+
+}
+
+main .ol {
+    margin: 0 auto;  
+    background-color: rgb(254, 177, 213);
+}
+main .quote2 {
+    background-color: rgb(254, 177, 213);
+    text-align: center;
+}
+footer {
+    margin: 0 auto;
+    width: 320px;
+    background-color: rgb(254, 177, 213);
+    text-align: center;
+}

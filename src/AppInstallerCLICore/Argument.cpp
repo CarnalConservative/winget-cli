@@ -88,13 +88,15 @@ namespace AppInstaller::CLI
         case Args::Type::ExperimentalArg:
             return Argument{ "arg", NoAlias, Args::Type::ExperimentalArg, Resource::String::ExperimentalArgumentDescription, ArgumentType::Flag, ExperimentalFeature::Feature::ExperimentalArg };
         case Args::Type::Rename:
-            return Argument{ "rename", NoAlias, Args::Type::Rename, Resource::String::RenameArgumentDescription, ArgumentType::Positional, false };
+            return Argument{ "rename", 'r', Args::Type::Rename, Resource::String::RenameArgumentDescription, ArgumentType::Standard, false };
         case Args::Type::Purge:
             return Argument{ "purge", NoAlias, Args::Type::Purge, Resource::String::PurgeArgumentDescription, ArgumentType::Flag, false };
         case Args::Type::Preserve:
             return Argument{ "preserve", NoAlias, Args::Type::Preserve, Resource::String::PreserveArgumentDescription, ArgumentType::Flag, false };
         case Args::Type::Wait:
             return Argument{ "wait", NoAlias, Args::Type::Wait, Resource::String::WaitArgumentDescription, ArgumentType::Flag, false };
+        case Args::Type::ProductCode:
+            return Argument{ "product-code", NoAlias, Args::Type::ProductCode, Resource::String::ProductCodeArgumentDescription, ArgumentType::Standard, false };
         default:
             THROW_HR(E_UNEXPECTED);
         }
@@ -111,7 +113,7 @@ namespace AppInstaller::CLI
 
     void Argument::ValidatePackageSelectionArgumentSupplied(const Execution::Args& args)
     {
-        for (Args::Type type : { Args::Type::Query, Args::Type::Manifest, Args::Type::Id, Args::Type::Name, Args::Type::Moniker, Args::Type::Tag, Args::Type::Command })
+        for (Args::Type type : { Args::Type::Query, Args::Type::Manifest, Args::Type::Id, Args::Type::Name, Args::Type::Moniker, Args::Type::ProductCode, Args::Type::Tag, Args::Type::Command })
         {
             if (args.Contains(type))
             {

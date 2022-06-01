@@ -6,7 +6,6 @@ namespace AppInstallerCLIE2ETests
     using System;
     using System.IO;
     using System.Threading;
-    using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
     using NUnit.Framework;
 
@@ -49,6 +48,7 @@ namespace AppInstallerCLIE2ETests
             ConfigureFeature("experimentalCmd", status);
             ConfigureFeature("dependencies", status);
             ConfigureFeature("directMSI", status);
+            ConfigureFeature("portableInstall", status);
         }
     }
 }

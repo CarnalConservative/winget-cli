@@ -4,35 +4,43 @@
 `       `
 // Step 1: Declare a new variable to hold information about yourself
 const myInfo = {
+    // Step 2: Inside of the object, add a property named name with a value of your name as a string
     name: "Frank Brosell",
+    // Step 3: Add another property named photo with a value of the image path and name (used in Task 2) as a string
     photo: "CSE_121.b/images/Carnal_Logo.jpg",
+    // Step 4: Add another property named favoriteFoods with a value of an array of your favorite foods as strings ( hint: [] )
     favoriteFoods: ["Prime Rib", " Salmon", " Keto Lasagna "],
+    // Step 5: Add another property named hobbies with a value of an array of your hobbies as strings
     hobbies: ["Gaming", " YouTube", " Politics"],
+    // Step 6: Add another property named placesLived with a value of an empty array
     placesLived: [
+        // Step 7: Inside of the empty array above, add a new object with two properties: place and length and values of an empty string
         myHomes = [
             {place: "", length: ""}
+            // Step 8: For each property, add appropriate values as strings
+            // Step 9: Add additional objects with the same properties for each place you've lived
         ]
     ]
 
 }
-// Step 2: Inside of the object, add a property named name with a value of your name as a string
-
-// Step 3: Add another property named photo with a value of the image path and name (used in Task 2) as a string
 
 
-// Step 4: Add another property named favoriteFoods with a value of an array of your favorite foods as strings ( hint: [] )
 
 
-// Step 5: Add another property named hobbies with a value of an array of your hobbies as strings
+
+
+
+
+
 
 ;
-// Step 6: Add another property named placesLived with a value of an empty array
 
-// Step 7: Inside of the empty array above, add a new object with two properties: place and length and values of an empty string
 
-// Step 8: For each property, add appropriate values as strings
 
-// Step 9: Add additional objects with the same properties for each place you've lived
+
+
+
+
 
 
 /* OUTPUT */

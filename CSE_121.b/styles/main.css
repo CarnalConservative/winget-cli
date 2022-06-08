@@ -1,10 +1,25 @@
 /* HTML Selectors */
+h1 {
+    text-align: center;
+}
+h3 {
+    text-align: center;
+}
+h4 {
+    text-align: center;
+}
+article {
+    text-align: center;
+    margin: 10px;
+}
+
 body {
-    font-family: 'Kalam', cursive;
+    text-align: center;
+    font-family: 'Poor Richard', cursive;
 }
 
 div {
-    margin: 10px;
+    
     text-align: center;
 }
 
@@ -20,10 +35,19 @@ header {
     text-align: center;
 }
 
+img {
+    text-align: center;
+    width: 80%;
+}
+
 label {
     display: inline-block;
     min-width: 120px;
-    text-align: right;
+    text-align: center;
+}
+
+main {
+    text-align: center;
 }
 
 nav {
@@ -41,25 +65,34 @@ nav ul {
 }
 
 nav ul li:first-child {
+    text-align: center;
     display: block;
 }
 
 nav ul li {
+    text-align: center;
     display: none;
     list-style: none;
     margin: 10px;
 }
 
 nav ul li a {
+    text-align: center;
     color: white;
     display: block;
     padding: 10px;
     text-decoration: none;
 }
 nav ul li a:hover {
+    text-align: center;
     background-color: #efefef;
     color: black;
 }
+
+section {
+    text-align: center;
+}
+
 
 /* Class Selectors */
 .active {
@@ -68,31 +101,6 @@ nav ul li a:hover {
 }
 
 .open li {
+    text-align: center;
     display: block;
-}
-
-/* ID Selectors */
-#favorite-foods, #hobbies, #places-lived {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: inline-block;
-    text-align: left;
-    vertical-align: top;
-}
-
-/* Media Queries */
-@media only screen and (min-width: 32.5em) {
-    nav ul {
-        flex-direction: row;
-    }
-    
-    nav ul li:first-child {
-        display: none;
-    }
-
-    nav ul li {
-        display: inline;
-        margin: 0 10px;
-    }
 }

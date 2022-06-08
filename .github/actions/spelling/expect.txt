@@ -120,6 +120,7 @@ EXEHASH
 experimentalfeatures
 fcb
 fd
+fdw
 fedorapeople
 fileinuse
 fintimes
@@ -217,6 +218,7 @@ llvm
 localhost
 localizationpriority
 LPBYTE
+LPDWORD
 LPWSTR
 LSTATUS
 LTDA
@@ -240,7 +242,7 @@ monicka
 MPNS
 msdn
 msdownload
-MSFT
+msft
 msftrubengu
 MSIHASH
 MSIXHASH
@@ -259,6 +261,7 @@ netlify
 Newtonsoft
 NOEXPAND
 nonetwork
+nonterminated
 normer
 NOSEPARATOR
 NOTAPROPERTY
@@ -272,13 +275,16 @@ objbase
 objidl
 ofile
 Outptr
+OSVERSION
 Packagedx
 packageinuse
 parametermap
 pathparts
 pathpaths
 Patil
+pb
 PCs
+pcwsz
 pdp
 PEGI
 pfn
@@ -316,6 +322,7 @@ Redist
 REFIID
 regexes
 REGSAM
+reparse
 restsource
 rgex
 rhs
@@ -359,6 +366,7 @@ SUSE
 swervy
 SYD
 SYG
+symlink
 sysrefcomp
 Tagit
 TCpp
@@ -393,6 +401,7 @@ uninstalls
 unknwn
 unparsable
 UNSCOPED
+unvirtualized
 UParse
 UPSERT
 uris
@@ -404,8 +413,10 @@ USHORT
 utils
 uuid
 UWP
+VALUENAMECASE
 VERSI
 VERSIE
+virtualization
 vns
 vscode
 vstest
@@ -436,6 +447,7 @@ WZDNCRFJ
 XPLATSTR
 xsi
 yamlcreateps
+yao
 ype
 Zanollo
 zy

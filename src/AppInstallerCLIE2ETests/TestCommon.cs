@@ -3,11 +3,12 @@
 
 namespace AppInstallerCLIE2ETests
 {
+    using Microsoft.Win32;
     using NUnit.Framework;
     using System;
     using System.Diagnostics;
     using System.IO;
-    using System.Text;
+    using System.Linq;
     using System.Threading;
 
     public class TestCommon
@@ -275,6 +276,48 @@ namespace AppInstallerCLIE2ETests
         public static bool RemoveMsix(string name)
         {
             return RunCommand("powershell", $"Get-AppxPackage \"{name}\" | Remove-AppxPackage");
+        }
+
+        public static void VerifyPortablePackage(
+            string installDir,
+            string commandAlias,
+            string filename,
+            string productCode,
+            bool shouldExist)
+        {
+            string exePath = Path.Combine(installDir, filename);
+            bool exeExists = File.Exists(exePath);
+
+            string symlinkDirectory = Path.Combine(System.Environment.GetEnvironmentVariable("LocalAppData"), "Microsoft", "WinGet", "Links");
+            string symlinkPath = Path.Combine(symlinkDirectory, commandAlias);
+            bool symlinkExists = File.Exists(symlinkPath);
+
+            bool portableEntryExists;
+            string subKey = @$"Software\Microsoft\Windows\CurrentVersion\Uninstall";
+            using (RegistryKey uninstallRegistryKey = Registry.CurrentUser.OpenSubKey(subKey, true))
+            {
+                RegistryKey portableEntry = uninstallRegistryKey.OpenSubKey(productCode, true);
+                portableEntryExists = portableEntry != null;
+            }
+
+            bool isAddedToPath;
+            using (RegistryKey environmentRegistryKey = Registry.CurrentUser.OpenSubKey(@"Environment", true))
+            {
+                string pathName = "Path";
+                var currentPathValue = (string)environmentRegistryKey.GetValue(pathName);
+                var portablePathValue = symlinkDirectory + ';';
+                isAddedToPath = currentPathValue.Contains(portablePathValue);
+            }
+
+            if (shouldExist)
+            {
+                RunAICLICommand("uninstall", $"--product-code {productCode}");
+            }
+
+            Assert.AreEqual(shouldExist, exeExists, $"Expected portable exe path: {exePath}");
+            Assert.AreEqual(shouldExist, symlinkExists, $"Expected portable symlink path: {symlinkPath}");
+            Assert.AreEqual(shouldExist, portableEntryExists, $"Expected {productCode} subkey in path: {subKey}");
+            Assert.AreEqual(shouldExist, isAddedToPath, $"Expected path variable: {symlinkDirectory}");
         }
 
         /// <summary>

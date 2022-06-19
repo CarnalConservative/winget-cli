@@ -74,13 +74,14 @@ footer a:hover {
 }
 header {
     display: grid;
-    grid-template-columns: 150px auto;
+    grid-template-columns: 300px auto;
 }
 nav {
     display: flex;
     justify-content: space-around;
 }
 #logo_link {
+    padding: auto;
     padding-top: 5px;
     justify-self: center;
     align-self: center;
@@ -107,6 +108,7 @@ nav {
     width: 100%;
 }
 .card-img {
+    width: auto;
     border: 10px solid #d9c2a3;
     transition: transform .5s;
     box-shadow: 5px 5px 10px #6f7364;

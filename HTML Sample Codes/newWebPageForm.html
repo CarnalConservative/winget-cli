@@ -51,12 +51,15 @@ Get Stuff! Gibs Monies!
     <!--Input Fields
     Performance Type: (solo, duet, concerto). Note: the duet performance type requires the listing of two students. Give this input the name performance. -->
     Would you like to know more?:<br>
-    <select name="" ; onchange="showDiv(this)"; required>
+    <select name="" ; onchange="showDiv(this)";>
         <option value="" >-select-</option>
         <option value="yes" >Yes</option>
         <option value="no" >No</option>        
     </select><br>
-
+    <div id="hiddenNo" style="display:none;">
+    Bye Loser!
+    </div>
+    <br>
     <div id="hidden0" style="display:none;">
     How Would You Like To Pay For This Knowledge?:<br>
         <input type="radio" id="none" name="pay" value="" onchange="showDiva0(this)";>
@@ -95,10 +98,7 @@ Get Stuff! Gibs Monies!
     <label for="crypto_link">Link: </label>
         <input id="crypto_link" name="crypto_link" required ><br>
     </div>
-    <div id="hiddenNo" style="display:none;">
-    Bye Loser!
-    </div>
-    <br>
+   
     
     <input type="reset" value="Clear" onclick="showDiv(this)"><input type="submit" value="Register">
 </form>
